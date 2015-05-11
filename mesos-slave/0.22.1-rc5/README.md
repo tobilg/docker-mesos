@@ -45,7 +45,7 @@ You can use the containerizers (Mesos, Docker) by providing the following option
 If you want your Mesos slave to be accessible via the Docker host ip, then you should add the following options:
 
         --net=host \
-        -e MESOS_IP=$(/usr/bin/ip -o -4 addr list eth0 | grep global | awk \'{print $4}\' | cut -d/ -f1) \
+        -e MESOS_IP=$(/usr/bin/ip -o -4 addr list eth0 | grep global | awk '{print $4}' | cut -d -f1) \
         -e MESOS_HOSTNAME=$(/usr/bin/hostname) \
 
 Be sure to replace `eth0` with the actual interface your host is using for external access. For RedHat/CentOS/Fedora-based hosts' the `MESOS_IP` line needs to replaced with

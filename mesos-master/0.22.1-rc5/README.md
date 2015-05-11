@@ -37,9 +37,9 @@ if you have 3 master nodes. Also, you should add a cluster name:
 If you want your Mesos master to be accessible via the Docker host ip, then you should run it with the following options (on Debian/Ubuntu etc. based hosts):
 
     $ docker run -d \
-        --name mesos_master
+        --name mesos_master \
         --net=host \
-        -e MESOS_IP=$(/usr/bin/ip -o -4 addr list eth0 | grep global | awk \'{print $4}\' | cut -d/ -f1) \
+        -e MESOS_IP=$(/usr/bin/ip -o -4 addr list eth0 | grep global | awk '{print $4}' | cut -d -f1) \
         -e MESOS_LOG_DIR=/var/log \
         -e MESOS_WORK_DIR=/var/lib/mesos/master \
         -e MESOS_ZK=[zookeeper URL] \
