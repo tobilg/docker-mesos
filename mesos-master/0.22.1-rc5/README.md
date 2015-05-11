@@ -34,11 +34,10 @@ if you have 3 master nodes. Also, you should add a cluster name:
 
 ### Networking
 
-If you want your Mesos master to be accessible via the Docker host ip, then you should run it with the following options:
+If you want your Mesos master to be accessible via the Docker host ip, then you should run it with the following options (on Debian/Ubuntu etc. based hosts):
 
     $ docker run -d \
         --name mesos_master
-        --privileged \
         --net=host \
         -e MESOS_IP=$(/usr/bin/ip -o -4 addr list eth0 | grep global | awk \'{print $4}\' | cut -d/ -f1) \
         -e MESOS_LOG_DIR=/var/log \
@@ -47,4 +46,6 @@ If you want your Mesos master to be accessible via the Docker host ip, then you 
         -p 5050:5050 \
         tobilg/mesos-master
 
-Be sure to replace `eth0` with the actual interface your host is using for external access.
+Be sure to replace `eth0` with the actual interface your host is using for external access. For RedHat/CentOS/Fedora-based hosts' the `MESOS_IP` line needs to replaced with
+
+    -e MESOS_IP=$(/sbin/ifconfig eth0 | grep 'inet ' | awk '{print $2}') \
