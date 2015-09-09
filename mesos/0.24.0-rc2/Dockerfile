@@ -4,18 +4,18 @@ MAINTAINER tobilg <fb.tools.github@gmail.com>
 # Install packages
 RUN apt-get update && apt-get install  -yq --no-install-recommends --force-yes \
     openjdk-7-jdk \
-	libcurl4-nss-dev \
-	libsasl2-dev \
-	libsasl2-2 \
-	libapr1-dev \
-	libsvn-dev \
-	libsasl2-modules \
-	autoconf \
+    libcurl4-nss-dev \
+    libsasl2-dev \
+    libsasl2-2 \
+    libapr1-dev \
+    libsvn-dev \
+    libsasl2-modules \
+    autoconf \
     automake \
     sasl2-bin \
     libtool \
-	maven \
-	wget && \
+    maven \
+    wget && \
     rm -rf /var/lib/apt/lists/*
 	
 # Set Mesos version
