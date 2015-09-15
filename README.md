@@ -1,5 +1,5 @@
 # Dockerfiles for Apache Mesos
-This repository contains builds of the lastest Mesos versions available in the [Mesos Git repository](https://github.com/apache/mesos). Currently, the latest version is 0.24.0-rc2. 
+This repository contains builds of the lastest Mesos versions available in the [Mesos Git repository](https://github.com/apache/mesos). Currently, the latest version is 0.24.0. 
 The intention of creating this image was to be able to provide and use the latest Mesos versions not yet available via the package managers.
 
 ### Master & Slave Dockerfiles
